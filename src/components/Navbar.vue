@@ -17,10 +17,12 @@
     <div id="navbarSupportedContent" class="navbar-collapse collapse">
       <div class="ml-auto d-flex align-items-center">
         <!-- is user is admin -->
-        <router-link to="#" class="text-dark mr-3">管理員後台</router-link>
+        <router-link to="#" class="text-dark mr-3" v-if="currentUser.isAdmin">管理員後台</router-link>
         <!-- is user is login -->
-        <router-link to="#" class="text-dark mr-3">使用者 您好</router-link>
-        <button type="button" class="btn btn-sm btn-outline-dark my-2 my-sm-0">登出</button>
+        <template v-if="isAuthenticated">
+          <router-link to="#" class="text-dark mr-3">{{ currentUser.name || '使用者' }} 您好</router-link>
+          <button type="button" class="btn btn-sm btn-outline-dark my-2 my-sm-0">登出</button>
+        </template>
       </div>
     </div>
   </nav>
@@ -40,6 +42,7 @@ const dummyUser = {
 }
 
 export default {
+  // Vue 會在沒有資料時使用此預設值
   data () {
     return {
       currentUser: {
@@ -53,6 +56,7 @@ export default {
     }
   },
   methods: {
+    // 會向後端 API 拉取資料
     fetchUser () {
       this.currentUser = {
         ...this.currentUser,
