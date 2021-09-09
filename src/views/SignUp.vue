@@ -1,8 +1,6 @@
 <template>
   <div class="container d-flex justify-content-center py-5">
-    <form 
-      class="w-50"
-      @submit.prevent.stop="handleSubmit">
+    <form class="w-50" @submit.prevent.stop="handleSubmit">
       <div class="text-center mb-4">
         <h1 class="h3 mb-3 font-weight-normal">Sign Up</h1>
       </div>
@@ -63,9 +61,7 @@
         />
       </div>
 
-      <button class="btn btn-lg btn-primary btn-block mb-3" type="submit">
-        Sign Up
-      </button>
+      <button class="btn btn-lg btn-primary btn-block mb-3" type="submit">Sign Up</button>
 
       <div class="text-center mb-3">
         <p>
@@ -73,16 +69,14 @@
         </p>
       </div>
 
-      <p class="mt-5 mb-3 text-muted text-center">
-        &copy; 2021 Alpha Restaurant Forum
-      </p>
+      <p class="mt-5 mb-3 text-muted text-center">&copy; 2021 Alpha Restaurant Forum</p>
     </form>
   </div>
 </template>
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       name: '',
       email: '',
@@ -91,7 +85,7 @@ export default {
     }
   },
   methods: {
-    handleSubmit(){
+    handleSubmit () {
       const data = JSON.stringify({
         name: this.name,
         email: this.email,
