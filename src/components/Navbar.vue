@@ -1,6 +1,6 @@
 <template>
-  <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-white">
-    <router-link class="navbar-brand text-danger" to="/">Alpha discussion forum</router-link>
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-white shadow-sm">
+    <router-link class="navbar-brand text-danger" to="/">Alpha Discussion Forum</router-link>
     <a
       class="navbar-toggler text-danger pointer-link"
       data-toggle="collapse"
@@ -21,7 +21,7 @@
         <!-- is user is login -->
         <template v-if="isAuthenticated">
           <router-link to="#" class="text-dark mr-3">{{ currentUser.name || '使用者' }} 您好</router-link>
-          <button type="button" class="btn btn-sm btn-outline-dark my-2 my-sm-0">登出</button>
+          <button type="button" class="btn btn-sm btn-outline-danger my-2 my-sm-0">登出</button>
         </template>
       </div>
     </div>
