@@ -4,10 +4,10 @@
     <div class="card-body">
       <div v-for="restaurant in restaurants" :key="restaurant.id">
         <h4>
-          <a href="#">{{restaurant.name}}</a>
-          <small>{{restaurant.Category ? restaurant.Category.name : '未分類'}}</small>
+          <a href="#">{{ restaurant.name }}</a>
+          <small>{{ restaurant.Category ? restaurant.Category.name : '未分類' }}</small>
         </h4>
-        <p>{{restaurant.description}}</p>
+        <p>{{ restaurant.description }}</p>
         {{ restaurant.createdAt | fromNow }}
         <hr />
       </div>

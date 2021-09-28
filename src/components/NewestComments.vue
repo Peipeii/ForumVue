@@ -2,35 +2,34 @@
   <div class="card">
     <div class="card-header">最新評論</div>
     <div class="card-body">
-      <div>
+      <div v-for="comment in comments" :key="comment.id">
         <h4>
-          <a href="#">Sandrine Kilback</a>
+          <a href="#">{{ comment.Restaurant.name }}</a>
         </h4>
-        <p>At reiciendis eaque hic excepturi ratione officiis ad ut minus.</p>by
-        <a href="#">root</a>
-        at 3 days ago
-        <hr />
-      </div>
-
-      <div>
-        <h4>
-          <a href="#">Golden Hegmann</a>
-        </h4>
-        <p>Commodi a totam.</p>by
-        <a href="#">user1</a>
-        at 3 days ago
-        <hr />
-      </div>
-
-      <div>
-        <h4>
-          <a href="#">Trent Hilpert</a>
-        </h4>
-        <p>Ipsa nulla qui.\nOptio labore voluptatem in quam laborum et.</p>by
-        <a href="#">user1</a>
-        at 3 days ago
+        <p>{{ comment.text }}</p>by
+        <a href="#">{{ comment.User.name }}</a>
+        at {{ comment.createdAt | fromNow }}
         <hr />
       </div>
     </div>
   </div>
 </template>
+
+<script>
+import moment from 'moment'
+
+export default {
+  filters: {
+    fromNow (value) {
+      if (!value) return '-'
+      return moment(value).fromNow()
+    }
+  },
+  props: {
+    comments: {
+      type: Array,
+      require: true
+    }
+  }
+}
+</script>

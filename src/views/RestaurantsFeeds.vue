@@ -10,7 +10,7 @@
       </div>
       <div class="col-md-6">
         <h3>最新評論</h3>
-        <NewestComments />
+        <NewestComments :comments="comments" />
       </div>
     </div>
   </div>
@@ -530,8 +530,9 @@ export default {
   },
   methods: {
     fetchFeeds () {
-      this.restaurants = dummyData.restaurants
-      this.comments = dummyData.comments
+      const { restaurants, comments } = dummyData
+      this.restaurants = restaurants
+      this.comments = comments.filter(comment => { comment.Restaurant && comment.text })  //若餐廳不存在則不顯示此評論
     }
   }
 }
