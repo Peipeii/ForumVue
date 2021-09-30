@@ -2,23 +2,33 @@
   <div class="container py-5">
     <!-- 使用 NavTabs 元件 -->
     <NavTabs />
-    <!-- <h1 class="mt-5">首頁 - 餐廳列表</h1> -->
-    <!-- 餐廳類別標籤 RestaurantsNavPills -->
+    <!-- 餐廳類別標籤 -->
+    <RestaurantsNavPills :categories="categories" />
     <div class="row">
-      <!-- 餐廳卡片-->
+      <!-- 餐廳卡片 -->
       <RestaurantCard
         v-for="restaurant in restaurants"
         :key="restaurant.id"
         :initial-restaurant="restaurant"
       />
     </div>
-    <!-- 分頁標籤 RestaurantPagination -->
+    <!-- 分頁標籤 -->
+    <RestaurantPagination
+      v-if="totalPage.length > 1"
+      :current-page="currentPage"
+      :total-page="totalPage"
+      :category-id="categoryId"
+      :previous-page="previousPage"
+      :next-page="nextPage"
+    />
   </div>
 </template>
 
 <script>
 import NavTabs from './../components/NavTabs'
 import RestaurantCard from './../components/RestaurantCard.vue'
+import RestaurantsNavPills from './../components/RestaurantsNavPills.vue'
+import RestaurantPagination from './../components/RestaurantsPagination.vue'
 
 const dummyData = {
   "restaurants": [
@@ -299,7 +309,9 @@ const dummyData = {
 export default {
   components: {
     NavTabs,
-    RestaurantCard
+    RestaurantCard,
+    RestaurantsNavPills,
+    RestaurantPagination
   },
   data () {
     return {
