@@ -16,15 +16,11 @@
 </template>
 
 <script>
-import moment from 'moment'
+import { fromNowFilter } from './../utils/mixins'
 
 export default {
-  filters: {
-    fromNow (value) {
-      if (!value) return '-'
-      return moment(value).fromNow()
-    }
-  },
+  // 透過 mixins 屬性將撰寫好的 mixin 放入
+  mixins: [fromNowFilter],
   props: {
     comments: {
       type: Array,
