@@ -4,7 +4,12 @@
 
     <div v-for="comment in restaurantComments" :key="comment.id">
       <blockquote class="blockquote mb-0">
-        <button v-if="currentUser.isAdmin" type="button" class="btn btn-danger float-right">Delete</button>
+        <button
+          v-if="currentUser.isAdmin"
+          type="button"
+          class="btn btn-danger float-right"
+          @click.stop.prevent="handleDeleteButtonClick(comment.id)"
+        >Delete</button>
         <h3>
           <a href="#">{{ comment.User.name }}</a>
         </h3>
@@ -43,6 +48,14 @@ export default {
     }
   },
   // 透過 mixins 屬性將撰寫好的 mixin 放入
-  mixins: [fromNowFilter]
+  mixins: [fromNowFilter],
+  methods: {
+    handleDeleteButtonClick (commentId) {
+      console.log('handleDeleteButtonClick: ', commentId)
+      // TODO: 透過 API 向伺服器請求刪除 Id 為 commentId 的評論
+      // 觸發父層事件 - $emit( '事件名稱' , 傳遞的資料 )
+      this.$emit('after-delete-comment', commentId)
+    }
+  }
 }
 </script>
