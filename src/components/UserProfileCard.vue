@@ -6,20 +6,20 @@
       </div>
       <div class="col-md-8">
         <div class="card-body">
-          <h5 class="card-title">user1</h5>
-          <p class="card-text">user1@example.com</p>
+          <h5 class="card-title">{{ user.name }}</h5>
+          <p class="card-text">{{ user.email }}</p>
           <ul class="list-unstyled list-inline">
             <li>
-              <strong>28</strong> 已評論餐廳
+              <strong>{{ user.commentsLength }}</strong> 已評論餐廳
             </li>
             <li>
-              <strong>1</strong> 收藏的餐廳
+              <strong>{{ user.favoritedRestaurantsLength }}</strong> 收藏的餐廳
             </li>
             <li>
-              <strong>4</strong> followings (追蹤者)
+              <strong>{{ user.followingsLength }}</strong> followings (追蹤者)
             </li>
             <li>
-              <strong>1</strong> followers (追隨者)
+              <strong>{{ user.followersLength }}</strong> followers (追隨者)
             </li>
           </ul>
           <p></p>
@@ -32,3 +32,14 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  props: {
+    user: {
+      type: Object,
+      required: true
+    }
+  }
+}
+</script>
