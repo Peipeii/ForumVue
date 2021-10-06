@@ -20,7 +20,10 @@
         <router-link to="#" class="text-dark mr-3" v-if="currentUser.isAdmin">管理員後台</router-link>
         <!-- is user is login -->
         <template v-if="isAuthenticated">
-          <router-link to="#" class="text-dark mr-3">{{ currentUser.name || '使用者' }} 您好</router-link>
+          <router-link
+            :to="{ name: 'user', params: { id: currentUser.id }}"
+            class="text-dark mr-3"
+          >{{ currentUser.name || '使用者' }} 您好</router-link>
           <button type="button" class="btn btn-sm btn-outline-danger my-2 my-sm-0">登出</button>
         </template>
       </div>
