@@ -7,14 +7,14 @@
     />
     <div class="row">
       <div class="col-md-4">
-        <UserFollowingsCard />
+        <UserFollowingsCard :followings="followings" />
         <br />
-        <UserFollowersCard />
+        <UserFollowersCard :followers="followers" />
       </div>
       <div class="col-md-8">
-        <UserCommentsCard />
+        <UserCommentsCard :comments="comments" />
         <br />
-        <UserFavoritedRestaurantsCard />
+        <UserFavoritedRestaurantsCard :favorited-restaurants="favoritedRestaurants" />
       </div>
     </div>
   </div>
@@ -1261,20 +1261,17 @@ export default {
         FavoritedRestaurants
       } = profile
 
-      const commentSet = new Set()
       // 每個 Restaurant 只能出現一次，移除掉重複出現的 Restaurant
+      const commentSet = new Set()
       this.comments = Comments.filter(comment => {
         if (!comment.Restaurant) return false;
         if (commentSet.has(comment.Restaurant.id)) return false;
         commentSet.add(comment.Restaurant.id);
         return true;
+        // comment.Restaurant &&
+        //   !commentSet.has(comment.Restaurant.id) &&
+        //   commentSet.add(comment.Restaurant.id)
       });
-      // this.comments = Comments.filter(
-      //   comment =>
-      //     comment.Restaurant &&
-      //     !commentSet.has(comment.Restaurant.id) &&
-      //     commentSet.add(comment.Restaurant.id)
-      // )
 
       this.user = {
         ...this.user,
