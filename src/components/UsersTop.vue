@@ -2,13 +2,13 @@
   <div class="container py-5">
     <div class="row text-center">
       <div class="col-3" v-for="user in users" :key="user.id">
-        <a href="#">
+        <router-link :to="{ name: 'user', params: user.id }">
           <img
             :src="user.image ? user.image : 'http://via.placeholder.com/300x300?text=No+Image'"
             width="140px"
             height="140px"
           />
-        </a>
+        </router-link>
         <h2>{{user.name}}</h2>
         <span class="badge badge-secondary">追蹤人數：{{user.FollowerCount}}</span>
         <p class="mt-3">
