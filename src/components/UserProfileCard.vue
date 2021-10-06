@@ -2,7 +2,7 @@
   <div class="card mb-3">
     <div class="row no-gutters">
       <div class="col-md-4">
-        <img src="https://via.placeholder.com/300" width="300px" height="300px" />
+        <img :src="user.image" width="300px" height="300px" />
       </div>
       <div class="col-md-8">
         <div class="card-body">
@@ -23,9 +23,23 @@
             </li>
           </ul>
           <p></p>
-          <form action="/following/2?_method=DELETE" method="POST" style="display: contents;">
-            <button type="submit" class="btn btn-danger">取消追蹤</button>
-          </form>
+          <template v-if="isCurrentUser">
+            <a href="#" class="btn btn-primary">Edit</a>
+          </template>
+          <template v-else>
+            <button
+              v-if="isFollowed"
+              type="button"
+              class="btn btn-danger"
+              @click.stop.prevent="deleteFollowing(user.id)"
+            >取消追蹤</button>
+            <button
+              v-else
+              type="button"
+              class="btn btn-primary"
+              @click.stop.prevent="addFollowing(user.id)"
+            >追蹤</button>
+          </template>
           <p></p>
         </div>
       </div>
@@ -38,6 +52,10 @@ export default {
   props: {
     user: {
       type: Object,
+      required: true
+    },
+    isCurrentUser: {
+      type: Boolean,
       required: true
     }
   }

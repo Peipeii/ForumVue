@@ -1,6 +1,6 @@
 <template>
   <div class="container py-5">
-    <UserProfileCard :user="user" />
+    <UserProfileCard :user="user" :is-current-user="currentUser.id === user.id" />
     <div class="row">
       <div class="col-md-4">
         <UserFollowingsCard />
@@ -1198,6 +1198,16 @@ const dummyData = {
   'isFollowed': false
 }
 
+const dummyUser = {
+  currentUser: {
+    "id": 1,
+    "name": "root",
+    "email": "root@example.com",
+    "image": null,
+    "isAdmin": true
+  },
+  isAuthenticated: true
+}
 
 export default {
   name: 'User',
@@ -1224,7 +1234,8 @@ export default {
       followings: [],
       followers: [],
       comments: [],
-      favoritedRestaurants: []
+      favoritedRestaurants: [],
+      currentUser: dummyUser.currentUser
     }
   },
   created () {
@@ -1245,6 +1256,21 @@ export default {
         Comments,
         FavoritedRestaurants
       } = profile
+
+      const commentSet = new Set()
+      // 每個 Restaurant 只能出現一次，移除掉重複出現的 Restaurant
+      this.comments = Comments.filter(comment => {
+        if (!comment.Restaurant) return false;
+        if (commentSet.has(comment.Restaurant.id)) return false;
+        commentSet.add(comment.Restaurant.id);
+        return true;
+      });
+      // this.comments = Comments.filter(
+      //   comment =>
+      //     comment.Restaurant &&
+      //     !commentSet.has(comment.Restaurant.id) &&
+      //     commentSet.add(comment.Restaurant.id)
+      // )
 
       this.user = {
         ...this.user,
