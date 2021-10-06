@@ -29,11 +29,11 @@ const dummyData = {
       "tel": "12",
       "address": "12",
       "opening_hours": "14:01",
-      "description": "12",
+      "description": "Voluptates veritatis blanditiis ipsam. Tempora molestiae ut qui deserunt debitis sit. Impedit est rem. Blanditiis aliquid atque quo necessitatibus. Veniam sint explicabo. Est velit soluta.",
       "image": null,
       "viewCounts": 0,
       "createdAt": "2021-09-14T11:17:50.000Z",
-      "updatedAt": "2021-09-14T11:17:50.000Z",
+      "updatedAt": "2021-09-27T07:12:03.000Z",
       "CategoryId": 2,
       "Category": {
         "id": 2,
@@ -44,19 +44,19 @@ const dummyData = {
     },
     {
       "id": 181,
-      "name": "TGI FRIDAYS",
+      "name": "新增測試2",
       "tel": "",
       "address": "",
       "opening_hours": "",
-      "description": "So apparently TGI Fridays started this mistletoe-drone thingy for the holiday season",
-      "image": "https://imgur.com/gallery/ICiegQJ",
-      "viewCounts": 0,
+      "description": "123321123",
+      "image": "https://i.imgur.com/2rEGDYA.jpeg",
+      "viewCounts": 1,
       "createdAt": "2021-09-13T11:30:45.000Z",
-      "updatedAt": "2021-09-25T03:09:21.000Z",
+      "updatedAt": "2021-09-27T07:10:56.000Z",
       "CategoryId": 7,
       "Category": {
         "id": 7,
-        "name": "美式料理",
+        "name": "複合式料理",
         "createdAt": "2021-09-08T08:34:40.000Z",
         "updatedAt": "2021-09-08T08:34:40.000Z"
       }
@@ -88,9 +88,9 @@ const dummyData = {
       "opening_hours": "",
       "description": "",
       "image": null,
-      "viewCounts": 0,
+      "viewCounts": 1,
       "createdAt": "2021-09-09T09:10:47.000Z",
-      "updatedAt": "2021-09-09T09:10:47.000Z",
+      "updatedAt": "2021-10-05T09:56:51.000Z",
       "CategoryId": 0,
       "Category": null
     },
@@ -124,7 +124,7 @@ const dummyData = {
     },
     {
       "id": 61,
-      "name": "McDonald's",
+      "name": "麥當勞",
       "tel": "1234",
       "address": "台北市",
       "opening_hours": "08:00",
@@ -168,9 +168,9 @@ const dummyData = {
       "opening_hours": "08:00",
       "description": "Corporis et tenetur inventore ipsam ex libero ab nihil cum. Aut molestias sed dignissimos repellendus et quam. Animi explicabo cupiditate accusamus cum eveniet facilis. Excepturi aut quo et nihil beatae praesentium ut et.",
       "image": "https://loremflickr.com/320/240/restaurant,food/?random=30.676668227125358",
-      "viewCounts": 227,
+      "viewCounts": 231,
       "createdAt": "2021-09-08T08:34:40.000Z",
-      "updatedAt": "2021-09-25T19:48:11.000Z",
+      "updatedAt": "2021-10-06T04:57:59.000Z",
       "CategoryId": 5,
       "Category": {
         "id": 5,
@@ -318,9 +318,9 @@ const dummyData = {
         "opening_hours": "08:00",
         "description": "Corporis et tenetur inventore ipsam ex libero ab nihil cum. Aut molestias sed dignissimos repellendus et quam. Animi explicabo cupiditate accusamus cum eveniet facilis. Excepturi aut quo et nihil beatae praesentium ut et.",
         "image": "https://loremflickr.com/320/240/restaurant,food/?random=30.676668227125358",
-        "viewCounts": 227,
+        "viewCounts": 231,
         "createdAt": "2021-09-08T08:34:40.000Z",
-        "updatedAt": "2021-09-25T19:48:11.000Z",
+        "updatedAt": "2021-10-06T04:57:59.000Z",
         "CategoryId": 5
       }
     },
@@ -349,9 +349,9 @@ const dummyData = {
         "opening_hours": "08:00",
         "description": "In repellat voluptas aut non qui. Voluptatem et architecto voluptas aliquid ut dolorem. Iusto doloribus dolores.",
         "image": "https://loremflickr.com/320/240/restaurant,food/?random=64.54266428046233",
-        "viewCounts": 7496,
+        "viewCounts": 7498,
         "createdAt": "2021-09-08T08:34:40.000Z",
-        "updatedAt": "2021-09-16T07:30:13.000Z",
+        "updatedAt": "2021-10-06T10:29:37.000Z",
         "CategoryId": 1
       }
     },
@@ -380,9 +380,9 @@ const dummyData = {
         "opening_hours": "08:00",
         "description": "In repellat voluptas aut non qui. Voluptatem et architecto voluptas aliquid ut dolorem. Iusto doloribus dolores.",
         "image": "https://loremflickr.com/320/240/restaurant,food/?random=64.54266428046233",
-        "viewCounts": 7496,
+        "viewCounts": 7498,
         "createdAt": "2021-09-08T08:34:40.000Z",
-        "updatedAt": "2021-09-16T07:30:13.000Z",
+        "updatedAt": "2021-10-06T10:29:37.000Z",
         "CategoryId": 1
       }
     },
@@ -411,9 +411,9 @@ const dummyData = {
         "opening_hours": "08:00",
         "description": "In repellat voluptas aut non qui. Voluptatem et architecto voluptas aliquid ut dolorem. Iusto doloribus dolores.",
         "image": "https://loremflickr.com/320/240/restaurant,food/?random=64.54266428046233",
-        "viewCounts": 7496,
+        "viewCounts": 7498,
         "createdAt": "2021-09-08T08:34:40.000Z",
-        "updatedAt": "2021-09-16T07:30:13.000Z",
+        "updatedAt": "2021-10-06T10:29:37.000Z",
         "CategoryId": 1
       }
     },
@@ -442,9 +442,9 @@ const dummyData = {
         "opening_hours": "08:00",
         "description": "In repellat voluptas aut non qui. Voluptatem et architecto voluptas aliquid ut dolorem. Iusto doloribus dolores.",
         "image": "https://loremflickr.com/320/240/restaurant,food/?random=64.54266428046233",
-        "viewCounts": 7496,
+        "viewCounts": 7498,
         "createdAt": "2021-09-08T08:34:40.000Z",
-        "updatedAt": "2021-09-16T07:30:13.000Z",
+        "updatedAt": "2021-10-06T10:29:37.000Z",
         "CategoryId": 1
       }
     },
@@ -532,7 +532,7 @@ export default {
     fetchFeeds () {
       const { restaurants, comments } = dummyData
       this.restaurants = restaurants
-      this.comments = comments.filter(comment => { comment.Restaurant && comment.text })  //若餐廳不存在則不顯示此評論
+      this.comments = comments.filter(comment => comment.Restaurant && comment.text)  //若餐廳不存在則不顯示此評論
     }
   }
 }
