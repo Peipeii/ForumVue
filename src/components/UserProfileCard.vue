@@ -31,13 +31,13 @@
               v-if="isFollowed"
               type="button"
               class="btn btn-danger"
-              @click.stop.prevent="deleteFollowing(user.id)"
+              @click.stop.prevent="deleteFollowing()"
             >取消追蹤</button>
             <button
               v-else
               type="button"
               class="btn btn-primary"
-              @click.stop.prevent="addFollowing(user.id)"
+              @click.stop.prevent="addFollowing()"
             >追蹤</button>
           </template>
           <p></p>
@@ -57,6 +57,23 @@ export default {
     isCurrentUser: {
       type: Boolean,
       required: true
+    },
+    initialIsFollowed: {
+      type: Boolean,
+      required: true
+    }
+  },
+  data () {
+    return {
+      isFollowed: this.initialIsFollowed
+    }
+  },
+  methods: {
+    addFollowing () {
+      this.isFollowed = true
+    },
+    deleteFollowing () {
+      this.isFollowed = false
     }
   }
 }
