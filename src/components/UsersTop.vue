@@ -2,7 +2,7 @@
   <div class="container py-5">
     <div class="row text-center">
       <div class="col-3" v-for="user in users" :key="user.id">
-        <router-link :to="{ name: 'user', params: user.id }">
+        <router-link :to="{ name: 'user', params: { id: user.id }}">
           <img
             :src="user.image ? user.image : 'http://via.placeholder.com/300x300?text=No+Image'"
             width="140px"
